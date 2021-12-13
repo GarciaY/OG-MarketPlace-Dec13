@@ -1,0 +1,46 @@
+h3 {
+    
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  padding-left: 20px;
+  
+}
+
+.user-avatar{
+  
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-margin{
+  margin: 2rem;
+}
+
+h1 {
+  color: #939fab;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: larger;
+}
+
+
+ion-label{
+  
+  margin-right: auto;
+}
+
+ion-button{
+  margin-top: .8rem;
+  margin-bottom: .8rem;
+  --border-color:  #74c365 ;
+  
+  --background: #74c365 ;
+  --color: white;
+}

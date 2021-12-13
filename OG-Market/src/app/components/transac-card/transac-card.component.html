@@ -1,0 +1,33 @@
+
+
+<ion-content>
+  
+<ion-card class="ion-margin" *ngFor="let order of orders"> <!--*ngFor="let (create a loop for dynamic output of card)"-->
+    <ion-item-sliding >
+      <ion-card-header color="light">
+
+        <ion-item color="light" lines="none">
+          <ion-thumbnail class="ion-margin-right">
+            <img src="./assets/images/face1.jpg">
+          </ion-thumbnail>
+          <ion-label  class="ion-padding-left">{{order.ORDERID}}</ion-label>
+        </ion-item>
+        <!--Delete SLider Button Option-->
+        <ion-item-options side="start">
+          <ion-item-option color="danger" (click)="confirmDelete(order.ORDERID)">Delete</ion-item-option>
+        </ion-item-options> 
+      </ion-card-header>
+    </ion-item-sliding>  
+    
+<!--     
+      <ion-card-content class="ion-margin-top">
+    
+          <p>Lorem Ipsum</p>
+          <p>Some content samples</p>
+      
+      </ion-card-content> -->
+     
+    
+</ion-card>
+</ion-content>  
+  

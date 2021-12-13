@@ -1,0 +1,71 @@
+<ion-app>
+  <ion-menu side="start" contentId="main-menu" class="styleToolbar">
+   
+
+     
+
+    <ion-content>
+      
+
+      <ion-menu-toggle auto-hide="false">
+        <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="assets/images/face1.jpg" routerLink="user-profile">
+        <ion-label>
+          <h2>{{firstname}} {{lastname}} </h2>
+          <p>{{email}}</p>
+        </ion-label>
+      </div>
+        <ion-list lines="none" class="menu-items">
+          
+          <ion-item routerLink="/user-profile">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>
+              {{address}}
+            </ion-label>
+          </ion-item>
+          <ion-item routerLink="/user-profile">
+            <ion-icon name="call-outline" slot="start"></ion-icon>
+            <ion-label>
+             {{contactnumber}}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+      </ion-menu-toggle>
+      <div class="menu-items">
+      <!-- <ion-item lines="none" (click)="isRemainder === 1 ? isRemainder = 0 : isRemainder = 1">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        Address 
+        <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      </ion-item> -->
+    
+      <ion-menu-toggle auto-hide="false">
+        <ion-list lines="none">
+<!-- 
+          <ion-item menuclose [hidden]="!isRemainder" routerLink="/user-profile"
+            [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="chevron-forward-outline" slot="start"></ion-icon>
+            User Barangay 
+          </ion-item>
+
+          <ion-item menuclose [hidden]="!isRemainder" routerLink="/user-profile"
+            [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="chevron-forward-outline" slot="start"></ion-icon>
+            User Street
+          </ion-item> -->
+
+
+          <ion-item >
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label >
+             <ion-button (click)='onLogout()'> Logout</ion-button>
+            </ion-label> 
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+      </div>  
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-menu"></ion-router-outlet>
+</ion-app>

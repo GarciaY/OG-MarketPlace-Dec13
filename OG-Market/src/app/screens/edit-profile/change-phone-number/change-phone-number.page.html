@@ -1,0 +1,26 @@
+<ion-content>
+  <app-back-button routerLink="/user-profile"></app-back-button>
+  
+  <h3>Change Phone Number</h3>
+  <br>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="content-margin">
+    
+    <h2>Your Current Phone Number:</h2>
+
+    <ion-label><p>{{contactnumber}}</p></ion-label> <!--Dynamic user input typescript-->
+
+    <app-input label="New Contact Number:"  formControlName="contactNumber" ngDefaultControl></app-input>
+    
+     <!--ErrorMessage.contactNumber-->
+     <div *ngFor="let error of errorMessages.contactNumber">
+      <ng-container *ngIf="contactNumber.hasError(error.type) && (contactNumber.dirty || contactNumber.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
+    <br>
+    <form-app-button  (click)= ' changephonenumber()'>Update</form-app-button>
+  </div>
+    
+</form>
+</ion-content>

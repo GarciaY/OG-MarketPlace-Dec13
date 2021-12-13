@@ -1,0 +1,51 @@
+<ion-content>
+  <h3 class="title" *ngIf="order"> towards at cart </h3>
+  
+  <!-- CART ITEMS -->
+  <ion-list lines="none">
+    <ion-item-sliding *ngFor="let order of orders">
+      <ion-item >
+        <div class="cart-item" >
+          <div class="image" [ngStyle]="{'background-image': 'url(http://localhost/ecommerce/admin/products/uploaded_photos/' + order.IMAGES + ')'}"></div>
+       
+          <div class="description">
+            <h3>{{order.PRODESC}}</h3>{{order.ORDEREDQTY}} 
+            <p><sup>₱{{order.ORDEREDPRICE}}</sup></p>
+          </div>
+        </div>
+      </ion-item>
+      <!-- <ion-item *ngFor="let img of image">
+         
+      </ion-item> -->
+      
+      
+      <ion-item-options side='end'>
+        <ion-item-option (click)="removeFromCart(order.ORDERID)">
+          <ion-icon name='trash-outline' size='large' color='danger'></ion-icon>
+        </ion-item-option>
+       
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
+      
+
+
+
+  <!-- EMPTY CART -->
+  <div class="empty-cart" *ngIf="order == ''">
+    <ion-icon name="d-cart"></ion-icon>
+    <p>Your cart is empty</p>
+  </div>
+
+  <!-- CHECKOUT BUTTON -->
+  <shop-app-button *ngIf="order != ''">
+    Total: <span><sup>₱{{total}}</sup></span>
+  </shop-app-button>
+  <shop-app-button (click)= "checkout()" *ngIf="order != ''">Checkout</shop-app-button> 
+  <br>
+  <br>
+  <br>
+  <br>
+   
+</ion-content>

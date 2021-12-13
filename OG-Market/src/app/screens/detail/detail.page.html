@@ -1,0 +1,61 @@
+<ion-content>
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/home/listing">
+        <ion-icon slot="icon-only" color='light' name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons>
+      <ion-button>
+        <ion-icon slot="icon-only" color='light' name="d-heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <!-- FOOD DETAIL CARD -->
+  <div class="card">
+    <!-- <div class="image">
+      <ion-img [src]="food.image"></ion-img>
+    </div> -->
+
+    <!-- <div class="card-content">
+      <div class="card-title">
+        <h1 class="ion-no-margin"></h1>
+        <p class="ion-no-margin"><sup>₱</sup></p>
+      </div>
+    </div> -->
+    
+    <ion-card *ngFor="let details of prodDetail">
+     
+      {{details.PRODESC}}
+      {{details.PROPRICE}}
+      
+    <div class="about">
+      <h1>About</h1>
+      <p></p>
+    </div>
+    
+    <div class="rates">
+      <ion-item>
+        
+        <ion-label>Kg</ion-label>
+        <ion-select [(ngModel)]="kilo" (ionChange)="optionsFn();" >
+          <ion-select-option >1/4</ion-select-option>
+          <ion-select-option >1/2</ion-select-option>
+          <ion-select-option >3/4</ion-select-option>
+          <ion-select-option >1</ion-select-option>
+          <ion-select-option >2</ion-select-option>
+        </ion-select>
+      </ion-item>
+      PRICE:<ion-input readonly>{{total}}</ion-input>
+      <!--Bill palagyan typescript gawing onclick app badge then mag iiba dapat display ni price depende sa kung ilang kilo bibilhin-->
+
+
+      <!-- icon="d-time-forward"
+      icon="star-outline" -->
+    </div>
+ 
+    <shop-app-button (click)="addItemToCart()">Add to Cart</shop-app-button> 
+       </ion-card>                                                                         
+  </div>
+</ion-content>

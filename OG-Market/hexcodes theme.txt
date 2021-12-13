@@ -1,0 +1,19 @@
+Theme
+
+button
+#74c365
+
+
+main body
+#77dd77
+
+ion add to cart button
+#a9ba9d
+
+Price color
+#3cb371
+
+darkgreen (gradient)
+#006400
+
+russian green (badge)

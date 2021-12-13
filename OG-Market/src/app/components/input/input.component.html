@@ -1,0 +1,7 @@
+<div class="form-field">
+  <ion-label [ngClass]="focused ? 'label-focused' : ''">{{label}}</ion-label>
+  <ion-input [type]="type" (focus)="focused = true" (blur)="onBlur($event)" ></ion-input>
+
+
+
+</div>

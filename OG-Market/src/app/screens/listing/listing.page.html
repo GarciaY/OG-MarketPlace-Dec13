@@ -1,0 +1,38 @@
+<ion-content>
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Menu</h1>
+    
+  </div>
+
+  <!-- SEARCHBAR -->
+  <app-searchbar></app-searchbar>
+
+  <!-- CATEGORY -->
+  <div class="categories">
+    <!-- <app-category-item *ngFor="let item of categories" [item]="item"></app-category-item> -->
+  </div>
+
+  
+  <!-- PRODUCTS -->
+  <h1 class="list-header">Products</h1>
+  <div class="food-list"> 
+  
+    <ion-card *ngFor="let products of product" [routerLink]="['/detail/',products.PROID,products.PROPRICE,products.PROQTY]">
+       {{products.PROID}}
+       {{products.PROPRICE}},{{products.PROQTY}}
+       {{products.PRODESC}}
+    </ion-card> 
+    <!-- <ion-item *ngFor="let products of product">
+      {{products.PROID}}
+    </ion-item> -->
+  </div>
+</ion-content>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,26 @@
+
+<ion-content>
+  <app-back-button routerLink="/user-profile"></app-back-button>
+  
+  <h3>Change Email</h3>
+  <br>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="content-margin">
+
+    <h1>Your Current Email:</h1>
+    
+    <ion-label><p>{{mail}}</p></ion-label> <!--Dynamic user input typescript-->
+
+    <app-input label="New Email:"  inputmode="email" formControlName="email" ngDefaultControl></app-input>
+    <!--ErrorMessage.Email-->
+    <div *ngFor="let error of errorMessages.email">
+      <ng-container *ngIf='email.hasError(error.type) && (email.dirty || email.touched)'>
+        <small class="error-message" class="ion-padding">{{error.message}}</small>
+      </ng-container>
+  </div>
+    <br>
+    <form-app-button (click)= 'changeemail()'>Update</form-app-button>
+  </div>
+    
+</form>
+</ion-content>

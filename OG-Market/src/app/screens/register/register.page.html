@@ -1,0 +1,110 @@
+<ion-content class="ion-padding">
+  <img src="assets/images/OG-Market-place.png">
+  <h1>Create an Account,</h1>
+  <h3>Sign up to get started!</h3>
+
+  <form [formGroup] = profileForm (ngSubmit)= "onSubmit()">
+  
+     <app-input label="First Name" inputmode="text" formControlName="firstname" ngDefaultControl></app-input>
+      <!--ErrorMessage.FullName-->
+      <div *ngFor="let error of errorMessages.firstname">
+      <ng-container *ngIf='firstname.hasError(error.type) && (firstname.dirty || firstname.touched)'>
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+      </div>
+<br>
+
+      <app-input label="Last Name" inputmode="text" formControlName="lastname" ngDefaultControl></app-input>
+      <!--ErrorMessage.FullName-->
+      <div *ngFor="let error of errorMessages.lastname">
+      <ng-container *ngIf='lastname.hasError(error.type) && (lastname.dirty || lastname.touched)'>
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+      </div>
+<br>
+
+    <app-input label="Email" inputmode="email" formControlName="email" ngDefaultControl></app-input> 
+      <!--ErrorMessage.Email-->
+      <div *ngFor="let error of errorMessages.email">
+        <ng-container *ngIf='email.hasError(error.type) && (email.dirty || email.touched)'>
+          <small class="error-message" class="ion-padding">{{error.message}}</small>
+        </ng-container>
+      </div>
+<br>
+    <app-input label="Contact Number" inputmode="tel" formControlName="contactNumber" ngDefaultControl></app-input>
+    <!--ErrorMessage.contactNumber-->
+    <div *ngFor="let error of errorMessages.contactNumber">
+      <ng-container *ngIf="contactNumber.hasError(error.type) && (contactNumber.dirty || contactNumber.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
+
+<br>
+    <app-input label="Address" inputmode="text" formControlName="address" ngDefaultControl></app-input>
+    <!--ErrorMessage.contactNumber-->
+    <div *ngFor="let error of errorMessages.address">
+      <ng-container *ngIf="address.hasError(error.type) && (address.dirty || address.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
+
+
+
+
+    <!--Tabi lang muna dito in case-->
+    <!-- <ion-list >
+      <ion-list-header>
+        Address
+      </ion-list-header>
+
+      <ion-item>
+       <ion-label>Barangay</ion-label>
+        <ion-select  [(ngModel)]="barangay" [ngModelOptions]="{standalone: true}" (ionChange)="selectedBarangay($event)"> 
+          
+          <ion-select-option value="Sta.Rita">Sta.rita</ion-select-option>
+          <ion-select-option value="newCabalan">New Cabalan</ion-select-option>
+          <ion-select-option value="oldCabalan">Old Cabalan</ion-select-option>
+          <ion-select-option value="gordonHeights">Gordon Heights</ion-select-option>
+          <ion-select-option value="Mbayuan">Mabayuan</ion-select-option>
+          <ion-select-option value="Tabacuhan">Tabacuhan</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+    </ion-list> -->
+    <!-- <app-input label="Street" formControlName="street" ngDefaultControl></app-input> <!-- -->
+    <!-- ErrorMessage.Street -->
+    <!-- <div *ngFor="let error of errorMessages.street">
+      <ng-container *ngIf="street.hasError(error.type) && (street.dirty || street.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div> --> 
+   
+    <!--Password-->
+    <ion-list>
+      <ion-list-header>
+        Password
+      </ion-list-header>
+      <app-input label="Password:" type="password" formControlName="password" ngDefaultControl></app-input>
+      <!--ErrorMessage.Password-->
+      <div *ngFor="let error of errorMessages.password">
+        <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+      <br>
+      <app-input label="Confirm Password:" type="password" formControlName="password" ngDefaultControl></app-input>
+      <!--ErrorMessage.Password-->
+      <div *ngFor="let error of errorMessages.password">
+        <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-list>
+
+    <form-app-button label='Register' (click)="registerRequest()"></form-app-button>
+    <!-- <app-icon-button icon='logo-facebook' label='Connect with Facebook'></app-icon-button> -->
+  </form>
+
+  <p class="footer-text">I'm already a member, <a routerLink="/login">Sign In</a></p>
+</ion-content>

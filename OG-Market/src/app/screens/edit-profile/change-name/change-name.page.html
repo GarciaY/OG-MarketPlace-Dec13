@@ -1,0 +1,35 @@
+
+<ion-content>
+  <app-back-button routerLink="/user-profile"></app-back-button>
+  
+  <h3>Change User Name</h3>
+  <br>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="content-margin">
+    
+    <h1>Your Current User Name:</h1>
+    
+    <ion-label><p>{{fname}} {{lname}}</p></ion-label> <!--Dynamic user input typescript-->
+    
+    <app-input label="New First Name:"  inputmode="text" formControlName="firstname" ngDefaultControl></app-input>
+    <!--ErrorMessage.Fullname-->
+    <div *ngFor="let error of errorMessages.firstname">
+      <ng-container *ngIf='firstname.hasError(error.type) && (firstname.dirty || firstname.touched)'>
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+      </div>
+<br>
+    <app-input label="New Last Name:" inputmode="text" formControlName="lastname" ngDefaultControl></app-input>
+    <!--ErrorMessage.FullName-->
+    <div *ngFor="let error of errorMessages.lastname">
+    <ng-container *ngIf='lastname.hasError(error.type) && (lastname.dirty || lastname.touched)'>
+      <small class="error-message">{{error.message}}</small>
+    </ng-container>
+    </div>
+<br>
+
+    <form-app-button  (click)= 'changename()'>Update</form-app-button>
+  </div>
+    
+</form>
+</ion-content>

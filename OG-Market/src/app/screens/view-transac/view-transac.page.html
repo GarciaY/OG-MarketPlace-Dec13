@@ -1,0 +1,76 @@
+<ion-content>
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/home/cart">
+        <ion-icon slot="icon-only" color='light' name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <!-- FOOD DETAIL CARD -->
+  <div class="card">
+    
+
+    <div class="card-content">
+      <div class="card-title">
+        <h1 class="ion-no-margin">Order Details</h1>
+        <!-- <p class="ion-no-margin"><sup>₱</sup> 30.00 </p> -->
+      </div>
+    </div>
+
+    <div class="list-content">
+      <h3>Your order number:</h3>
+      <p>#v9u-f06</p>
+      
+      <h3>Your order from:</h3>
+      <p>OG Marketplace(shop label)</p>
+
+      <h3>Delivery Address:</h3>
+      <p>User Address sample</p>
+    </div>
+
+    <ion-list class="list-content">
+      <ion-list-header><h3>List of orders</h3></ion-list-header>
+
+      <ion-item> <!--User ngFor (for loop to display dynamic list of products)-->
+          <ion-avatar slot="start"> 
+          <img src="assets/images/foods/Bangus.png"> 
+          </ion-avatar> 
+          <ion-label slot="end"><p><sup>₱</sup>30<!--Product price--></p></ion-label>
+          <ion-label >Prod.label</ion-label> 
+      </ion-item>
+
+      <ion-item class="list-content">
+        <ion-avatar slot="start"> 
+        <img src="assets/images/foods/Bangus.png"> 
+        </ion-avatar> 
+        <ion-label slot="end"><p><sup>₱</sup>30<!--Product price--></p></ion-label>
+        <ion-label>Prod.label</ion-label> 
+    </ion-item>
+
+    <ion-item class="list-content">
+      <h1>Subtotal</h1>
+      <ion-label slot="end"><p><sup>₱</sup>60<!--Product price--></p></ion-label>
+    </ion-item>
+
+    <ion-item>
+      <h3>Delivery Fee:</h3>
+      <ion-label slot="end"><p><sup>₱</sup>10<!--Product price--></p></ion-label>
+    </ion-item>
+
+    <ion-item class="list-content">
+      <h1>Total</h1>
+      <ion-label slot="end"><p><sup>₱</sup>10<!--Product price--></p></ion-label>
+    </ion-item>
+
+
+    </ion-list>
+
+  
+
+    <shop-app-button
+    routerLink="/home/transactions" class="ion-padding">Okay</shop-app-button>
+
+
+  </div>
+</ion-content>
